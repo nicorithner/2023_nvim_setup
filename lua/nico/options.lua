@@ -55,8 +55,9 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.shortmess:append("c")
 
 -- Netrw window size
-vim.g.netrw_winsize = "25"
+vim.g.netrw_winsize = "30"
 vim.g.netrw_browse_split = "3"
+vim.g.netrw_banner = 0
 
 -- Markdown
 vim.g.markdown_fenced_languages = {
