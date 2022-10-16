@@ -42,6 +42,10 @@ return packer.startup(function(use)
 	use("sbdchd/neoformat") -- formatter https://github.com/sbdchd/neoformahttps://github.com/sbdchd/neoformatt
 	use("kyazdani42/nvim-web-devicons") -- https://github.com/kyazdani42/nvim-web-devicons
 	use("nvim-lua/plenary.nvim") -- https://github.com/nvim-lua/plenary.nvim
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API fjjrom vim in Neovim
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
+
+	-- Colorschemes
+	use("folke/tokyonight.nvim")
+
 end)
