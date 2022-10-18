@@ -45,6 +45,9 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API fjjrom vim in Neovim
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
 
+	-- Autopairs
+	use("windwp/nvim-autopairs") -- https://github.com/windwp/nvim-autopairs
+
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
