@@ -74,10 +74,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["eslint.nvim"] = {
+  ["lspkind-nvim"] = {
     loaded = true,
-    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/eslint.nvim",
-    url = "https://github.com/MunifTanjim/eslint.nvim"
+    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
@@ -128,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["prettier.nvim"] = {
+    loaded = true,
+    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/prettier.nvim",
+    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
