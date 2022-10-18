@@ -48,6 +48,11 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
+  -- LSP
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
+  use ("neovim/nvim-lspconfig")
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
