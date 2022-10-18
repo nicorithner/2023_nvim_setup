@@ -61,6 +61,9 @@ return packer.startup(function(use)
 	-- Autopairs
 	use("windwp/nvim-autopairs") -- https://github.com/windwp/nvim-autopairs
 
+	-- Autotags
+	use("windwp/nvim-ts-autotag") -- https://github.com/windwp/nvim-ts-autotag
+
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
