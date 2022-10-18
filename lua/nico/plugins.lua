@@ -67,6 +67,11 @@ return packer.startup(function(use)
 	-- Comments
 	use("terrortylor/nvim-comment") -- https://github.com/terrortylor/nvim-comment
 
+	-- Git
+	use("lewis6991/gitsigns.nvim") -- https://github.com/lewis6991/gitsigns.nvim
+
+	-- Illuminate
+	use("RRethy/vim-illuminate") -- https://github.com/RRethy/vim-illuminate
 
 	-- LSP
 	use("williamboman/mason.nvim")
