@@ -57,6 +57,10 @@ return packer.startup(function(use)
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
 	use("glepnir/lspsaga.nvim") -- LSP UIs
 	use("WhoIsSethDaniel/toggle-lsp-diagnostics.nvim") -- https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
+	use({
+		"folke/trouble.nvim", -- https://github.com/folke/trouble.nvim
+		cmd = "TroubleToggle",
+	}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
