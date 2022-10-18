@@ -64,6 +64,10 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
+	-- Comments
+	use("terrortylor/nvim-comment") -- https://github.com/terrortylor/nvim-comment
+
+
 	-- LSP
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
