@@ -61,14 +61,22 @@ return packer.startup(function(use)
 	-- Autopairs
 	use("windwp/nvim-autopairs") -- https://github.com/windwp/nvim-autopairs
 
+	-- Autotags
+	use("windwp/nvim-ts-autotag") -- https://github.com/windwp/nvim-ts-autotag
+
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
 	-- Comments
 	use("terrortylor/nvim-comment") -- https://github.com/terrortylor/nvim-comment
 
-	-- Git
-	use("lewis6991/gitsigns.nvim") -- https://github.com/lewis6991/gitsigns.nvim
+	-- Gitsigns
+	use({
+		"lewis6991/gitsigns.nvim", -- https://github.com/lewis6991/gitsigns.nvim
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 
 	-- Illuminate
 	use("RRethy/vim-illuminate") -- https://github.com/RRethy/vim-illuminate
@@ -86,6 +94,15 @@ return packer.startup(function(use)
 		"folke/trouble.nvim", -- https://github.com/folke/trouble.nvim
 		cmd = "TroubleToggle",
 	}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+
+	-- Nvim-tree
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+	})
 
 	-- Treesitter
 	use({
