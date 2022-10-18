@@ -62,6 +62,16 @@ return packer.startup(function(use)
 		cmd = "TroubleToggle",
 	}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
 
+	-- Treesitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
+
+	---------------------- *** ------------------------ *** ------------------------ *** -------------------------
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
