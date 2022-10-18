@@ -81,8 +81,8 @@ return packer.startup(function(use)
 	-- Illuminate
 	use("RRethy/vim-illuminate") -- https://github.com/RRethy/vim-illuminate
 
-  -- Indent line
-  use "lukas-reineke/indent-blankline.nvim"
+	-- Indent line
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- LSP
 	use("williamboman/mason.nvim")
@@ -97,6 +97,9 @@ return packer.startup(function(use)
 		"folke/trouble.nvim", -- https://github.com/folke/trouble.nvim
 		cmd = "TroubleToggle",
 	}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+
+	-- Lualine
+	use("nvim-lualine/lualine.nvim") -- https://github.com/nvim-lualine/lualine.nvim
 
 	-- Nvim-tree
 	use({
