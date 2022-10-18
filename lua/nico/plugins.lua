@@ -45,8 +45,33 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API fjjrom vim in Neovim
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
 
+	-- Autocompletion
+	use("hrsh7th/nvim-cmp") -- The completion plugin -- https://github.com/hrsh7th/nvim-cmp
+	use("hrsh7th/cmp-buffer") -- buffer completions -- https://github.com/hrsh7th/cmp-buffer
+	use("hrsh7th/cmp-path") -- path completions -- https://github.com/hrsh7th/cmp-path
+	use("hrsh7th/cmp-cmdline") -- cmdline completions -- https://github.com/hrsh7th/cmp-cmdline
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions -- https://github.com/saadparwaiz1/cmp_luasnip
+	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in language server client. -- https://github.com/hrsh7th/cmp-nvim-lsp
+	use("hrsh7th/cmp-nvim-lua") -- nvim-cmp source for neovim Lua API -- https://github.com/hrsh7th/cmp-nvim-lua
+
+	-- Autocompletion Snippets
+	use("L3MON4D3/LuaSnip") --snippet engine -- https://github.com/L3MON4D3/LuaSnip
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use -- https://github.com/rafamadriz/friendly-snippets
+
+	-- Autopairs
+	use("windwp/nvim-autopairs") -- https://github.com/windwp/nvim-autopairs
+
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
+
+	-- Comments
+	use("terrortylor/nvim-comment") -- https://github.com/terrortylor/nvim-comment
+
+	-- Git
+	use("lewis6991/gitsigns.nvim") -- https://github.com/lewis6991/gitsigns.nvim
+
+	-- Illuminate
+	use("RRethy/vim-illuminate") -- https://github.com/RRethy/vim-illuminate
 
 	-- LSP
 	use("williamboman/mason.nvim")
@@ -61,6 +86,16 @@ return packer.startup(function(use)
 		"folke/trouble.nvim", -- https://github.com/folke/trouble.nvim
 		cmd = "TroubleToggle",
 	}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+
+	-- Treesitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
+
+	---------------------- *** ------------------------ *** ------------------------ *** -------------------------
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
