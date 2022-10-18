@@ -20,3 +20,10 @@ keymap("n", "<leader>le", ":Lexplore<CR>", opts)
 -- Clear search
 keymap("n", "<esc>", ":nohlsearch<CR>", opts)
 
+-- Toggle LSP Diagnostics
+keymap('n', '<Leader>dd', ':ToggleDiag<CR>', { noremap = true, silent = true })
+keymap('n', '<leader>du', '<Plug>(toggle-lsp-diag-underline)', {silent = true })
+keymap('n', '<leader>ds', '<Plug>(toggle-lsp-diag-signs)', {silent = true })
+keymap('n', '<leader>dv', '<Plug>(toggle-lsp-diag-vtext)', {silent = true })
+keymap('n', '<leader>di', '<Plug>(toggle-lsp-diag-update_in_insert)', {silent = true })
+
