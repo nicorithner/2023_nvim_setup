@@ -29,13 +29,13 @@ if not status_ok then
 	return
 end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 
 return packer.startup(function(use)
-  -- Have packer manage itself
-  use("wbthomason/packer.nvim")
+	-- Have packer manage itself
+	use("wbthomason/packer.nvim")
 
- 	--------- Plugins without additional configuration
+	--------- Plugins without additional configuration
 	use("tpope/vim-fugitive") -- https://github.com/tpope/vim-fugitive
 	use("airblade/vim-gitgutter") -- https://github.com/airblade/vim-gitgutter
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }) -- preview markdown
@@ -48,4 +48,23 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
+	-- LSP
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("neovim/nvim-lspconfig")
+	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+	use("MunifTanjim/prettier.nvim") -- Prettier plugin for Neovim's built-in LSP client
+	use("onsails/lspkind-nvim") -- vscode-like pictograms
+	use("glepnir/lspsaga.nvim") -- LSP UIs https://github.com/glepnir/lspsaga.nvim
+	use("WhoIsSethDaniel/toggle-lsp-diagnostics.nvim") -- https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
+	use({
+		"folke/trouble.nvim", -- https://github.com/folke/trouble.nvim
+		cmd = "TroubleToggle",
+	}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)
