@@ -1,5 +1,18 @@
 -- -- Guide to default actions: https://github.com/kyazdani42/nvim-tree.lua#default-actions
-require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
+
+local status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok then
+	return
+end
+
+local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+if not config_status_ok then
+	return
+end
+
+local tree_cb = nvim_tree_config.nvim_tree_callback
+
+nvim_tree.setup({ -- BEGIN_DEFAULT_OPTS
 	auto_reload_on_write = true,
 	create_in_closed_folder = false,
 	disable_netrw = true,
@@ -189,7 +202,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 			all = false,
 			config = false,
 			copy_paste = false,
-      dev = false,
+			dev = false,
 			diagnostics = false,
 			git = false,
 			profile = false,
