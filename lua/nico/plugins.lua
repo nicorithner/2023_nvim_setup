@@ -29,13 +29,13 @@ if not status_ok then
 	return
 end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 
 return packer.startup(function(use)
-  -- Have packer manage itself
-  use("wbthomason/packer.nvim")
+	-- Have packer manage itself
+	use("wbthomason/packer.nvim")
 
- 	--------- Plugins without additional configuration
+	--------- Plugins without additional configuration
 	use("tpope/vim-fugitive") -- https://github.com/tpope/vim-fugitive
 	use("airblade/vim-gitgutter") -- https://github.com/airblade/vim-gitgutter
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }) -- preview markdown
@@ -48,14 +48,16 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
 
-  -- LSP
-  use("williamboman/mason.nvim")
-  use("williamboman/mason-lspconfig.nvim")
-  use ("neovim/nvim-lspconfig")
+	-- LSP
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("neovim/nvim-lspconfig")
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("MunifTanjim/eslint.nvim")
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-  	require("packer").sync()
-  end
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)

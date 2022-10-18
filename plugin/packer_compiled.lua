@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["eslint.nvim"] = {
+    loaded = true,
+    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/eslint.nvim",
+    url = "https://github.com/MunifTanjim/eslint.nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -93,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
