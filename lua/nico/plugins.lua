@@ -113,6 +113,16 @@ return packer.startup(function(use)
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
 
+	-- Telescope
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.0",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+
+	use("nvim-telescope/telescope-file-browser.nvim") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
+	use("nvim-telescope/telescope-fzy-native.nvim") -- https://github.com/nvim-telescope/telescope-fzy-native.nvim
+
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",

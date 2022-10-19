@@ -6,6 +6,7 @@
 --  term_mode = 't',
 --  command_mode = 'c'
 
+local builtin = require("telescope.builtin")
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
@@ -26,6 +27,13 @@ keymap("n", "<Leader>n", ":NvimTreeToggle<cr>", opts)
 
 -- Open explorer
 -- keymap("n", "<leader>le", ":Lexplore<CR>", opts)
+
+-- Telescope
+vim.keymap.set("n", "ff", builtin.find_files, {})
+vim.keymap.set("n", "fg", builtin.live_grep, {})
+vim.keymap.set("n", "fb", builtin.buffers, {})
+vim.keymap.set("n", "fh", builtin.help_tags, {})
+vim.keymap.set("n", "fo", builtin.oldfiles, {})
 
 -- Toggle LSP Diagnostics
 keymap("n", "<Leader>dd", ":ToggleDiag<CR>", { noremap = true, silent = true })
