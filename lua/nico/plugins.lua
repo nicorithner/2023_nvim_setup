@@ -46,17 +46,20 @@ return packer.startup(function(use)
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
 
 	-- Autocompletion
+
 	use("hrsh7th/nvim-cmp") -- The completion plugin -- https://github.com/hrsh7th/nvim-cmp
-	use("hrsh7th/cmp-buffer") -- buffer completions -- https://github.com/hrsh7th/cmp-buffer
-	use("hrsh7th/cmp-path") -- path completions -- https://github.com/hrsh7th/cmp-path
-	use("hrsh7th/cmp-cmdline") -- cmdline completions -- https://github.com/hrsh7th/cmp-cmdline
+	use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" }) -- nvim-cmp source for neovim Lua API -- https://github.com/hrsh7th/cmp-nvim-lua
+	use({ "hrsh7th/cmp-nvim-lsp", after = "cmp-nvim-lua" }) -- nvim-cmp source for neovim's built-in language server client. -- https://github.com/hrsh7th/cmp-nvim-lsp
+	use({ "hrsh7th/cmp-buffer", after = "cmp-nvim-lsp" }) -- buffer completions -- https://github.com/hrsh7th/cmp-buffer
+	use({ "hrsh7th/cmp-path", after = "cmp-buffer" }) -- path completions -- https://github.com/hrsh7th/cmp-path
+	use({ "hrsh7th/cmp-cmdline", after = "cmp-path" }) -- cmdline completions -- https://github.com/hrsh7th/cmp-cmdline
+	use({ "hrsh7th/cmp-calc", after = "cmp-cmdline" })
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions -- https://github.com/saadparwaiz1/cmp_luasnip
-	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in language server client. -- https://github.com/hrsh7th/cmp-nvim-lsp
-	use("hrsh7th/cmp-nvim-lua") -- nvim-cmp source for neovim Lua API -- https://github.com/hrsh7th/cmp-nvim-lua
 
 	-- Autocompletion Snippets
 	use("L3MON4D3/LuaSnip") --snippet engine -- https://github.com/L3MON4D3/LuaSnip
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use -- https://github.com/rafamadriz/friendly-snippets
+	use("honza/vim-snippets") -- https://github.com/honza/vim-snippets
 
 	-- Autopairs
 	use("windwp/nvim-autopairs") -- https://github.com/windwp/nvim-autopairs
@@ -100,6 +103,7 @@ return packer.startup(function(use)
 		"folke/trouble.nvim", -- https://github.com/folke/trouble.nvim
 		cmd = "TroubleToggle",
 	}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+	use("ray-x/lsp_signature.nvim") -- Show function signature when you type -- https://github.com/ray-x/lsp_signature.nvim
 
 	-- Lualine
 	use("nvim-lualine/lualine.nvim") -- https://github.com/nvim-lualine/lualine.nvim
@@ -130,6 +134,8 @@ return packer.startup(function(use)
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
+	use("nvim-treesitter/nvim-treesitter-refactor") -- https://github.com/nvim-treesitter/nvim-treesitter-refactor
+	use("RRethy/nvim-treesitter-endwise") -- https://github.com/RRethy/nvim-treesitter-endwise
 
 	---------------------- *** ------------------------ *** ------------------------ *** -------------------------
 
