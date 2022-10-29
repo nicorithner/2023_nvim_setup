@@ -44,6 +44,7 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- https://github.com/nvim-lua/plenary.nvim
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API fjjrom vim in Neovim
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
+	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
 	-- Autocompletion
 
@@ -97,7 +98,6 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 	use("MunifTanjim/prettier.nvim") -- Prettier plugin for Neovim's built-in LSP client
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
-	use("glepnir/lspsaga.nvim") -- LSP UIs https://github.com/glepnir/lspsaga.nvim
 	use("WhoIsSethDaniel/toggle-lsp-diagnostics.nvim") -- https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
 	use({
 		"folke/trouble.nvim", -- https://github.com/folke/trouble.nvim
