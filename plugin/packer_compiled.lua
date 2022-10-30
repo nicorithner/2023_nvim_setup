@@ -238,8 +238,10 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter-refactor"
   },
   ["nvim-ts-autotag"] = {
+    load_after = {},
     loaded = true,
-    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    needs_bufread = false,
+    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
@@ -335,6 +337,8 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-ts-autotag ]]
 vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd cmp-nvim-lua ]]
 vim.cmd [[ packadd cmp-nvim-lsp ]]
