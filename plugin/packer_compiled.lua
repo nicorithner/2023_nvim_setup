@@ -213,8 +213,10 @@ _G.packer_plugins = {
     url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lspconfig"] = {
+    load_after = {},
     loaded = true,
-    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    needs_bufread = false,
+    path = "/Users/nicorithner/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
@@ -346,6 +348,8 @@ vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-cmdline ]]
 vim.cmd [[ packadd cmp-calc ]]
+vim.cmd [[ packadd mason.nvim ]]
+vim.cmd [[ packadd nvim-lspconfig ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads

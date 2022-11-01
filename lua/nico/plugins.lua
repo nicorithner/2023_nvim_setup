@@ -94,7 +94,7 @@ return packer.startup(function(use)
 	-- LSP
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig")
+	use({ "neovim/nvim-lspconfig", after = "mason.nvim" })
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 	use("MunifTanjim/prettier.nvim") -- Prettier plugin for Neovim's built-in LSP client
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
