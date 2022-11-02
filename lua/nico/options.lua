@@ -49,7 +49,8 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.g.ruby_host_prog = "rvm system do neovim-ruby-host"
+vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.ruby_host_prog = "~/.rbenv/versions/3.1.2/bin/neovim-ruby-host"
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.shortmess:append("c")
