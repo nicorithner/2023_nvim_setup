@@ -15,7 +15,6 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		-- diagnostics.eslint,
-		null_ls.builtins.diagnostics.eslint,
-		null_ls.builtins.completion.spell,
+		-- null_ls.builtins.completion.spell,
 	},
 })
