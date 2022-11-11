@@ -24,7 +24,6 @@ local options = {
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	scrolloff = 8, -- is one of my fav
 	shell = "zsh",
-	shiftwidth = 2,
 	shiftwidth = 2, -- the number of spaces inserted for each indentation
 	showcmd = true,
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
@@ -50,7 +49,7 @@ for k, v in pairs(options) do
 end
 
 vim.g.python3_host_prog = "/usr/bin/python3"
-vim.g.ruby_host_prog = "~/.rbenv/versions/3.1.2/bin/neovim-ruby-host"
+-- vim.g.ruby_host_prog = "~/.rbenv/versions/3.1.2/bin/neovim-ruby-host"
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.shortmess:append("c")
