@@ -5,8 +5,7 @@ local lspkind = require("lspkind")
 cmp.setup {
   snippet = {
     expand = function(args)
-      -- For `ultisnips` user.
-      vim.fn["UltiSnips#Anon"](args.body)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = cmp.mapping.preset.insert {
