@@ -50,12 +50,16 @@ return packer.startup(function(use)
 
 	use("hrsh7th/nvim-cmp") -- The completion plugin -- https://github.com/hrsh7th/nvim-cmp
 	use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" }) -- nvim-cmp source for neovim Lua API -- https://github.com/hrsh7th/cmp-nvim-lua
+	use({ "hrsh7th/cmp-omni", after = "nvim-cmp" })
 	use({ "hrsh7th/cmp-nvim-lsp", after = "cmp-nvim-lua" }) -- nvim-cmp source for neovim's built-in language server client. -- https://github.com/hrsh7th/cmp-nvim-lsp
 	use({ "hrsh7th/cmp-buffer", after = "cmp-nvim-lsp" }) -- buffer completions -- https://github.com/hrsh7th/cmp-buffer
 	use({ "hrsh7th/cmp-path", after = "cmp-buffer" }) -- path completions -- https://github.com/hrsh7th/cmp-path
 	use({ "hrsh7th/cmp-cmdline", after = "cmp-path" }) -- cmdline completions -- https://github.com/hrsh7th/cmp-cmdline
 	use({ "hrsh7th/cmp-calc", after = "cmp-cmdline" })
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions -- https://github.com/saadparwaiz1/cmp_luasnip
+	if vim.g.is_mac then
+		use({ "hrsh7th/cmp-emoji", after = "nvim-cmp" })
+	end
 
 	-- Autocompletion Snippets
 	use("L3MON4D3/LuaSnip") --snippet engine -- https://github.com/L3MON4D3/LuaSnip
@@ -66,7 +70,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- https://github.com/windwp/nvim-autopairs
 
 	-- Autotags
-  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- https://github.com/windwp/nvim-ts-autotag
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- https://github.com/windwp/nvim-ts-autotag
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
