@@ -10,6 +10,11 @@ local builtin = require("telescope.builtin")
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+-- Leader key
+keymap("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Buffer Resize
 keymap("n", "<Leader>[", ":vertical resize +5<CR>", { noremap = true, silent = true })
 keymap("n", "<Leader>]", ":vertical resize -5<CR>", { noremap = true, silent = true })
@@ -17,10 +22,6 @@ keymap("n", "<Leader>]", ":vertical resize -5<CR>", { noremap = true, silent = t
 -- Clear search
 keymap("n", "<Space>k", ":nohlsearch<CR>", opts)
 
--- Leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- Nvimtree
 keymap("n", "<Leader>n", ":NvimTreeToggle<cr>", opts)
