@@ -5,7 +5,8 @@ lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    theme = 'powerline_dark',
+    -- theme = 'powerline_dark',
+    theme = 'onedark',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}

@@ -75,7 +75,8 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- https://github.com/windwp/nvim-ts-autotag
 
 	-- Colorschemes
-	use("folke/tokyonight.nvim")
+	-- use("folke/tokyonight.nvim")
+	use("navarasu/onedark.nvim")
 
 	-- Comments
 	use("terrortylor/nvim-comment") -- https://github.com/terrortylor/nvim-comment
