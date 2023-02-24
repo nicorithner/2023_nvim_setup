@@ -64,7 +64,14 @@ return packer.startup(function(use)
 	end
 
 	-- Autocompletion Snippets
-	use("L3MON4D3/LuaSnip") --snippet engine -- https://github.com/L3MON4D3/LuaSnip
+	-- "L3MON4D3/LuaSnip" snippet engine -- https://github.com/L3MON4D3/LuaSnip
+	use({
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		tag = "v<CurrentMajor>.*",
+		-- install jsregexp (optional!:).
+		run = "make install_jsregexp",
+	})
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use -- https://github.com/rafamadriz/friendly-snippets
 	use("honza/vim-snippets") -- https://github.com/honza/vim-snippets
 
