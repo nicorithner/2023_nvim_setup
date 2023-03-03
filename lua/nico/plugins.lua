@@ -45,7 +45,8 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API fjjrom vim in Neovim
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
-	use("norcalli/nvim-colorizer.lua") -- https://github.com/norcalli/nvim-colorizer.lua
+	-- use("norcalli/nvim-colorizer.lua") -- https://github.com/norcalli/nvim-colorizer.lua
+  use 'NvChad/nvim-colorizer.lua' --https://github.com/NvChad/nvim-colorizer.lua
 	use("sangdol/mintabline.vim") -- https://github.com/Sangdol/mintabline.vim
 
 	-- Autocompletion
@@ -83,7 +84,8 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	-- use("folke/tokyonight.nvim")
-	use("navarasu/onedark.nvim")
+	-- use("navarasu/onedark.nvim")
+  use "EdenEast/nightfox.nvim" -- https://github.com/EdenEast/nightfox.nvim
 
 	-- Comments
 	use("terrortylor/nvim-comment") -- https://github.com/terrortylor/nvim-comment

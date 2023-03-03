@@ -1,4 +1,11 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua", "rust_analyzer", "tsserver", "solargraph", "cssls", "emmet_ls" },
+	ensure_installed = {
+		lua_ls = {
+			Lua = {
+				workspace = { checkThirdParty = false },
+				telemetry = { enable = false },
+			},
+		},
+	},
 	automatic_installation = true,
 })
