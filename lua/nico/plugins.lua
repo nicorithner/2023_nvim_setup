@@ -40,13 +40,14 @@ return packer.startup(function(use)
 	use("airblade/vim-gitgutter") -- https://github.com/airblade/vim-gitgutter
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }) -- preview markdown
 	use("sbdchd/neoformat") -- formatter https://github.com/sbdchd/neoformahttps://github.com/sbdchd/neoformatt
+	use("neomake/neomake") -- https://github.com/neomake/neomake
 	use("kyazdani42/nvim-web-devicons") -- https://github.com/kyazdani42/nvim-web-devicons
 	use("nvim-lua/plenary.nvim") -- https://github.com/nvim-lua/plenary.nvim
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API fjjrom vim in Neovim
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 	-- use("norcalli/nvim-colorizer.lua") -- https://github.com/norcalli/nvim-colorizer.lua
-  use 'NvChad/nvim-colorizer.lua' --https://github.com/NvChad/nvim-colorizer.lua
+	use("NvChad/nvim-colorizer.lua") --https://github.com/NvChad/nvim-colorizer.lua
 	use("sangdol/mintabline.vim") -- https://github.com/Sangdol/mintabline.vim
 
 	-- Autocompletion
@@ -85,7 +86,7 @@ return packer.startup(function(use)
 	-- Colorschemes
 	-- use("folke/tokyonight.nvim")
 	-- use("navarasu/onedark.nvim")
-  use "EdenEast/nightfox.nvim" -- https://github.com/EdenEast/nightfox.nvim
+	use("EdenEast/nightfox.nvim") -- https://github.com/EdenEast/nightfox.nvim
 
 	-- Comments
 	use("terrortylor/nvim-comment") -- https://github.com/terrortylor/nvim-comment
