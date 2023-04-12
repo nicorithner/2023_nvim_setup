@@ -49,6 +49,7 @@ return packer.startup(function(use)
 	-- use("norcalli/nvim-colorizer.lua") -- https://github.com/norcalli/nvim-colorizer.lua
 	use("NvChad/nvim-colorizer.lua") --https://github.com/NvChad/nvim-colorizer.lua
 	use("sangdol/mintabline.vim") -- https://github.com/Sangdol/mintabline.vim
+  use 'wakatime/vim-wakatime'
 
 	-- Autocompletion
 
