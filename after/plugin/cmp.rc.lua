@@ -1,3 +1,4 @@
+-- --  see https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-add-visual-studio-code-dark-theme-colors-to-the-menu
 -- import nvim-cmp plugin safely
 local cmp_status, cmp = pcall(require, "cmp")
 if not cmp_status then
@@ -21,7 +22,25 @@ require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
-cmp.setup({
+require("cmp").setup({
+	window = {
+		completion = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+			col_offset = -3,
+			side_padding = 0,
+		},
+	},
+	formatting = {
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. (strings[1] or "") .. " "
+			kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+			return kind
+		end,
+	},
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
@@ -45,31 +64,47 @@ cmp.setup({
 		{ name = "path" }, -- for path completion
 	}),
 	-- configure lspkind for vs-code like icons
-	formatting = {
-		format = lspkind.cmp_format({
-			maxwidth = 50,
-			ellipsis_char = "...",
-		}),
+
+	{
+		PmenuSel = { bg = "#282C34", fg = "NONE" },
+		Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
+
+		CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", strikethrough = true },
+		CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE", bold = true },
+		CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE", bold = true },
+		CmpItemMenu = { fg = "#C792EA", bg = "NONE", italic = true },
+
+		CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
+		CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
+		CmpItemKindEvent = { fg = "#EED8DA", bg = "#B5585F" },
+
+		CmpItemKindText = { fg = "#C3E88D", bg = "#9FBD73" },
+		CmpItemKindEnum = { fg = "#C3E88D", bg = "#9FBD73" },
+		CmpItemKindKeyword = { fg = "#C3E88D", bg = "#9FBD73" },
+
+		CmpItemKindConstant = { fg = "#FFE082", bg = "#D4BB6C" },
+		CmpItemKindConstructor = { fg = "#FFE082", bg = "#D4BB6C" },
+		CmpItemKindReference = { fg = "#FFE082", bg = "#D4BB6C" },
+
+		CmpItemKindFunction = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindStruct = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindClass = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindModule = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindOperator = { fg = "#EADFF0", bg = "#A377BF" },
+
+		CmpItemKindVariable = { fg = "#C5CDD9", bg = "#7E8294" },
+		CmpItemKindFile = { fg = "#C5CDD9", bg = "#7E8294" },
+
+		CmpItemKindUnit = { fg = "#F5EBD9", bg = "#D4A959" },
+		CmpItemKindSnippet = { fg = "#F5EBD9", bg = "#D4A959" },
+		CmpItemKindFolder = { fg = "#F5EBD9", bg = "#D4A959" },
+
+		CmpItemKindMethod = { fg = "#DDE5F5", bg = "#6C8ED4" },
+		CmpItemKindValue = { fg = "#DDE5F5", bg = "#6C8ED4" },
+		CmpItemKindEnumMember = { fg = "#DDE5F5", bg = "#6C8ED4" },
+
+		CmpItemKindInterface = { fg = "#D8EEEB", bg = "#58B5A8" },
+		CmpItemKindColor = { fg = "#D8EEEB", bg = "#58B5A8" },
+		CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
 	},
 })
-
--- --  see https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-add-visual-studio-code-dark-theme-colors-to-the-menu
-vim.cmd([[
-  highlight! link CmpItemMenu Comment
-  " gray
-  highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-  " blue
-  highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-  highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-  " light blue
-  highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-  highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
-  highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
-  " pink
-  highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-  highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-  " front
-  highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-  highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-  highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-]])

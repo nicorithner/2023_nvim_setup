@@ -3,7 +3,7 @@ local options = {
   termguicolors = true, -- set term gui colors (most terminals support this)
   winblend = 0,
   wildoptions = 'pum',
-  pumblend = 5,
+  pumblend = 0,
   background = 'dark',
 }
 
