@@ -46,10 +46,9 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API fjjrom vim in Neovim
 	use("tpope/vim-surround") -- changes surrounding quotes or brackets and more. https://github.com/tpope/vim-surround
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
-	-- use("norcalli/nvim-colorizer.lua") -- https://github.com/norcalli/nvim-colorizer.lua
 	use("NvChad/nvim-colorizer.lua") --https://github.com/NvChad/nvim-colorizer.lua
 	use("sangdol/mintabline.vim") -- https://github.com/Sangdol/mintabline.vim
-  use 'wakatime/vim-wakatime'
+	use("wakatime/vim-wakatime")
 
 	-- Autocompletion
 
@@ -61,12 +60,13 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-path", after = "cmp-buffer" }) -- path completions -- https://github.com/hrsh7th/cmp-path
 	use({ "hrsh7th/cmp-cmdline", after = "cmp-path" }) -- cmdline completions -- https://github.com/hrsh7th/cmp-cmdline
 	use({ "hrsh7th/cmp-calc", after = "cmp-cmdline" })
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions -- https://github.com/saadparwaiz1/cmp_luasnip
 	if vim.g.is_mac then
 		use({ "hrsh7th/cmp-emoji", after = "nvim-cmp" })
 	end
+	use("mfussenegger/nvim-jdtls") -- https://github.com/mfussenegger/nvim-jdtls
 
 	-- Autocompletion Snippets
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions -- https://github.com/saadparwaiz1/cmp_luasnip
 	-- "L3MON4D3/LuaSnip" snippet engine -- https://github.com/L3MON4D3/LuaSnip
 	use({
 		"L3MON4D3/LuaSnip",
