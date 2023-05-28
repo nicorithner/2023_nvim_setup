@@ -12,6 +12,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({ extra_args = { "--semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.rubocop.with({ extra_args = { "--single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		-- diagnostics.eslint,
