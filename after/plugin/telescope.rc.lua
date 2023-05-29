@@ -10,7 +10,7 @@ telescope.setup({
 		file_sorter = require("telescope.sorters").get_fzf_sorter,
 		prompt_prefix = " ",
 		selection_caret = " ",
-		path_display = { "smart" },
+		path_display = { "absolute" }, -- "smart" displays a shortened path
 		file_ignore_patterns = { ".git/", "node_modules" },
 
 		mappings = {
@@ -33,4 +33,4 @@ telescope.setup({
 		},
 	},
 })
-require('telescope').load_extension('fzy_native')
+require("telescope").load_extension("fzy_native")
