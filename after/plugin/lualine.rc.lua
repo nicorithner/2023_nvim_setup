@@ -1,13 +1,13 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
-vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme tokyonight")
 lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
     -- theme = 'powerline_dark',
     -- theme = 'onedark',
-    theme = 'nightfox',
+    theme = 'tokyonight',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
