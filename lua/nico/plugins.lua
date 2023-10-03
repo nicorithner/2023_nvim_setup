@@ -107,7 +107,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 
 	-- Indent line
-	use("lukas-reineke/indent-blankline.nvim")
+	use("lukas-reineke/indent-blankline.nvim") -- https://github.com/lukas-reineke/indent-blankline.nvim
 
 	-- LSP
 	use("williamboman/mason.nvim")
